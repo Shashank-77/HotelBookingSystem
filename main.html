@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style_main.css" />
+    <title>Yoyo group of hotels</title>
+  </head>
+  <body>
+    <main id="account">
+      <h1 id="welcome"></h1>
+      <div id="details">
+      <table>
+        <tr id="points"><th id="points-header">Points redeemable</th><td id="points-value"></td></tr>
+        <tr><td id="booking-history" rowspan="2"></td><th id="make-booking"><a href="book.html">Make a booking</a></th></tr>
+        <tr><th id="update-profile"><a href="update.html">Update profile</a></th></tr>
+      </table>
+    </div>
+      <input type="button" name="logout" id="logout" value="Logout" onclick="LogOut()">
+    </main>
+    <script src="script_main.js"></script>
+  </body>
+</html>

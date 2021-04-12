@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style_create.css" />
+    <title>Yoyo group of hotels</title>
+  </head>
+  <body>
+      <h1 class="create-head">Create account</h1>
+      <table>
+        <form class="create-form" id="create-form">
+            <tr>
+                <td><label for="name">Name: </label></td>
+                <td><input name="name" id="name" type="text" required></td>
+            </tr>
+            <tr>
+                <td><label for="age">Age: </label></td>
+                <td><input name="age" id="age" type="number" required></td>
+            </tr>
+            <tr>
+                <td><label >Gender: </label></td>
+                    <td><input id="male" type="radio" value="Male" name="gender"><label for="male">Male</label>
+                    <input id="female" type="radio" value="Female" name="gender"><label for="female">Female</label>
+                    <input id="other" type="radio" value="Other" name="gender"><label for="other">Other</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="address">Address: </label></td>
+                <td><textarea name="address" id="address" placeholder="Enter full address" required></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="status">Marital Status: </label></td>
+                <td><select name="status" id="status">
+                    <option value="none"></option>
+                    <option value="Married">Married</option>
+                    <option value="single">Single</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit" id="submit" ></td>
+                <td><input type="button" value="Reset" id="resetBtn" onclick="myReset()"></td>
+            </tr>
+        </form>
+    </table>
+  </body>
+</html>
