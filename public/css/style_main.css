@@ -1,0 +1,52 @@
+.home {
+    background: linear-gradient(45deg, rgba(74, 71, 163, 0.61), rgba(74,40,133,0.61)) , url(../Images/main_back.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-animation: myfirst 1s ; /* Chrome, Safari, Opera */
+    animation: myfirst 1s ;
+ }
+ 
+ .title{
+   -webkit-animation: mytitle 1.5s ; /* Chrome, Safari, Opera */
+   animation: mytitle 1.5s ;
+ }
+ 
+ @-webkit-keyframes mytitle {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+ 
+  /* Standard syntax */
+  @keyframes mytitle {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+ @-webkit-keyframes myfirst {
+    from {opacity: 0.2;}
+    to {opacity: 1;}
+  }
+ 
+  /* Standard syntax */
+  @keyframes myfirst {
+    from {opacity: 0.2;}
+    to {opacity: 1;}
+  }
+ 
+ button{
+   background: #4a47a3;
+   border:1px solid #4a47a3;
+   border-radius: 14px;
+ }
+ 
+ button:hover{
+   background: var(--bs-success);
+   border: 1px solid var(--bs-success);
+ }
+ 
+ #go_book{
+   color: white;
+   transition: 0.25s;
+ }
+ #go_book:hover{
+   color:#a7c5eb;
+ }
