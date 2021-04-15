@@ -1,0 +1,70 @@
+{{!-- {{> header}} --}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div id="clock"></div>
+    <h1 align="center">Patient Registration Form</h1>
+    <form id="patient_form" action="/" name="patient_form" method="POST">
+        <table cellspacing="15">
+            <tr>
+                <td>First Name</td>
+                <td>
+                    <input type="text" id="name" name="name" placeholder="First Name" minlength="3" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>
+                    <input type="number" id="age" name="age" placeholder="Age" min="18" onblur="onBlur(this)"
+                        onfocus="onFocus(this)" required />
+                    <label id="age-check-label" style="display: none;">
+                        *Please enter a valid age. eg - (18-100)
+                    </label>
+                </td>
+            </tr>
+            <td>Number</td>
+            <td>
+                <input type="text" id="number" name="number" placeholder="Phone Number" minlength="10"
+                    onblur="onBlur(this)" onfocus="onFocus(this)" required />
+                <label id="phone-check-label" style="display: none;">
+                    *Please enter a valid phone number. eg - 912345678
+                </label>
+            </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <textarea name="address" id="address" placeholder="Address..." required></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>User Name</td>
+                <td>
+                    <input type="text" id="username" name="username" placeholder="username" minlength="3" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" id="password" name="password" placeholder="Password" minlength="3"
+                        required />
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" id="btn1" /></td>
+                <td><input type="reset" id="btn2" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
