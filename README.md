@@ -1,5 +1,6 @@
-THe other pages
+The other pages
 User
+
 1)Make a booking (Basically shows all the diffent choice of hotels available their location etc)
 
 2)Once the user clicks on one of the hotels in the make a booking he will be redirecting to a page specific for that hotel in order for him to make a booking there
