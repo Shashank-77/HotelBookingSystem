@@ -1,0 +1,19 @@
+.home {
+    background: #caf7e3;
+    height: auto;
+  }
+  
+  .features{
+    color:#56776c;
+  }
+  
+  .headline {
+      height: 3px;
+      background-color:#56776c;
+  }
+  
+  .coverline {
+      height: 3px;
+      background-color: var(--bs-secondary);
+  }
+  

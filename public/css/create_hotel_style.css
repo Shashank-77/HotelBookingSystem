@@ -1,0 +1,18 @@
+.home {
+    background: #caf7e3;
+    height: auto;
+  }
+  
+  .features{
+    color:#56776c;
+  }
+  
+  .headline {
+      height: 3px;
+      background-color:#56776c;
+  }
+  
+  input["submit"]{
+    color: #56776c;
+  }
+  
