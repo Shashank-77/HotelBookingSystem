@@ -1,0 +1,220 @@
+INTRO
+
+Planning a vacation has always been a stressful affair, going through several websites, deceptively attractive travel 
+brochures, and several sleepless nights, only to be troubled by "technical difficulties" at the venue itself. Upon arrival, 
+tourists are often told that the amenities they receive are different from those advertised, or maybe even sent to different 
+rooms entirely, owing to clerical errors and miscommunications between hotels and travel agencies. Having the already exhausted 
+families adjust to a slew of unexpected changes really dampens a vacation. Yoyo.com (Copyright Pending) aims to remind vacationers 
+the true purpose of a holiday: to relax, and spend a few days devoid of worry.
+
+We have decided to investigate the use  of an Online Hotel Room Reservation System. 
+This system would be used  by  members  who  may  be customers or staff/managers/owners  of  
+that  hotel branch/group  to  check  the  availability  of rooms, reserve or cancel bookings and by 
+the admin(s) to update databases fro check-in and check-out. The purpose of this document is to analyze and elaborate on 
+the high-level needs and features of the Online Hotel Room Reservation System.  All needs are 
+detailed in the use-case and supplementary specifications. 
+
+PURPOSE
+
+The  purpose  of Software  Requirements  Specification  (SRS) document  is  to  describe  
+the  external behavior  of  the  Online  Hotel Room Reservation  System.  Requirements  
+Specification  defines  and  describes  the  operations, interfaces,  performance,  and  
+quality  assurance  requirements  of the System.  The  document also  describes  the 
+nonfunctional  requirements  such as  the  user  interfaces.  It  also  describes  the  
+design constraints  that  are  to  be  considered  when  the  system  is  to  be  designed,  
+and  other  factors  necessary  to provide  a  complete  and  comprehensive  description  
+of  the  requirements  for  the  software.  The  Software Requirements Specification (SRS) captures 
+the complete software requirements for the system, or a portion of  the  system. 
+
+SCOPE
+
+The  Software  Requirements  Specification  captures  all the requirements  in  a single document. 
+The Online Hotel Room Reservation System  that  is to be developed provides the admin and customers
+of the hotel with information on vacancy, online blocking of rooms and many other facilities. The 
+system is supposed to have the following features:
+
+-----> Customers of the hotel are able to reserve and cancel a room at a hotel of
+       their choice under the group, under the date specified.
+-----> The system provides unique login facilities to each customer, staff and admins of the hotel(s).
+-----> Members of the hotel are able to view and update their profile details, in addition to being 
+       able to store payment and card details.
+-----> The system allows the staff to check in and check out customers at any time of the day, and is 
+       up and running all 24x7.
+-----> Vacancies are posted on the website for perusal and updated each time a reservation/cancellation 
+       is made.
+-----> Payments are handled at the time of check-out, and handled appropriately depending on membership.
+-----> Members are given special privileges like seasonal discounts and travel packages.
+-----> Customers have the options to avail facilities like swimming pool and the like, at overhead prices.
+
+The features that are described in this document are used in the future phases of the software development cycle. 
+The  features  described  here  meet  the  needs  of  all  the  users.  The  success  criteria  for  the  system 
+is based in the level up to which the features described in this document are implemented in the system.
+
+ACRONYMS
+
+REFERENCES
+
+OVERVIEW
+
+
+
+OVERALL DESCRIPTION
+
+PRODUCT PERSPECTIVE
+
+Yoyo.com (Copyright vangiyachu po) is an application to optimize the process of managing a vacation, from start to end. 
+This will greatly benefit anyone running a hotel, as well as the tourists who wish to stay at the aforementioned hotels.
+ The system itself operates on two modes: Manager and Tourist modes. The manager mode will be used by hotel staff, allowed 
+ access to the database of tourists, including regular visitors, and will have to update the status of rooms and other hotel 
+ services. The tourist mode will be used visitors, to plan and book trips, with the help of suggestions, courtesy of Yoyo.com 
+ (Copyright la irukku da punda). These suggestions will take into account the season, location, prices and duration of stay 
+ when prompting suggestions for itineraries. 
+
+The product will have interactions with hotel staff and tourists, switching modes accordingly. It will also interact with 
+other systems, such as the Internet, Billing System, Booking Database, Traveler Database and the Hotel Database. The complete 
+overview of the system is shown in the diagram below:
+
+PRODUCT FUNCTIONS
+
+The Online Library System provides  real time information about the Rooms available in the
+respective hotels and their pricing based on service. 
+The Product functions are more or less the same as described in the product perspective. 
+The functions of the system include the system providing different type of
+services based on the type of user [Guest/Manager of a Hotel].
+• The Guest should be provided with the updated information about the Availibility of Rooms across all the hotels regitered 
+on the site.
+• Provisions for the Guests to  book the room they  want, according to their availibilty.
+• The Guest is given a provision to check his account information and change the account
+information any time in the given valid period.
+• The Guests are provided with the Rooms available at each hotel and allowed to reserve the rooms where they would like to 
+stay prior of their visit and also allowed to cancel the rooms(terms and conditions apply).
+• The Manager can get the information about the Guests who have booked or cancelled Rooms.
+• The Manager is provided with interfaces to add/delete Rooms available in his hotel.
+• The Guests Will have to pay a small advance,for the room as well as all the accessories that the guest has reuqested access 
+to that the hotel has provided which will be 
+calculated by the system accordingly and the information about the Guest and the advance is
+sent to the manager.
+
+USER CHARACTERISTICS
+
+The users of this system are customers and admin staff who use and maintain it. They are assumed to have basic computer
+knowledge and that of online booking. The admin staff are to have a higher level of insight of the inner workings of the system
+and assumed to be capable of handling catastrophic failures owing to disk crashing or power failure. Guides built to instruct users
+and to setup and maintain system by staff should be self sufficient.
+
+CONSTRAINTS
+
+- The information about all users (Hotel staff and Tourists), bookings, and hotels must be stored in a database that is accessible by the booking system
+- The user information security system must be compatible with Internet applications
+- The booking and update system is running so long as it is connected to the Internet
+- The user can access the system from any device that has Internet browsing capabilities and an Internet connection
+- The billing system is connected to the booking system and the database used by the billing system must be compatible with the interface of the booking system.
+- The users must have their correct usernames and passwords to enter into the booking and update system.
+- Certain facets of the systems may only be available during certain times of the year
+
+DEPENDENCIES
+
+---> Access to DBs.
+---> Stable internet connection.
+---> sufficient knowledge of english and computers
+
+
+SPECIFIC REQUIREMENTS
+
+FUNCTIONALITY
+-->Logon Capabilities
+	The system shall provide the users with logon capabilities.
+-->Mobile Devices
+	The Online hotel room reservation System is also supported on mobile devices such as cell phones.
+-->Alerts
+	The system can alert the administrator in case of any problems.
+USABILITY
+-->The system shall allow the users to access the system from the Internet using HTML or it’s derivative
+    technologies. The system uses a web browser as an interface.
+-->Since all users are familiar with the general usage of browsers, no specific training is required.
+-->The system is user friendly and self-explanatory.
+RELIABILITY
+The system has to be very reliable due to the importance of data and the damages incorrect or incomplete data can do. 
+	Online Hotel Reservation System Version : 1
+	Software Requirements Specification Date : Feb 3, 2021
+-->Availability
+	The system is available 100% for the user and is used 24 hrs a day and 365 days a year. The system shall be operational 
+    24 hours a day and 7 days a week.
+-->Mean Time Between Failures (MTBF)
+	The system will be developed in such a way that it may fail once in a year.
+-->Mean Time to Repair (MTTR)
+    Even if the system fails, the system will be recovered back up within an hour or less.
+-->Accuracy
+	The accuracy of the system is limited by the accuracy of the speed at which the employees of the hotel
+		and users use the system.
+-->Maximum Bugs or Defect Rate
+	Not specified.
+-->Access Reliability
+	The system shall provide 100% access reliability.
+
+PERFORMANCE
+-->Response Time
+	The Splash Page or Information page should be able to be downloaded within a minute using a 56K
+	modem. The information is refreshed every two minutes. The access time for a mobile device should be
+	less than a minute. The system shall respond to the member in not less than two seconds from the time of
+	the request submittal. The system shall be allowed to take more time when doing large processing jobs.
+-->Administrator/Manager Response
+	The system shall take as less time as possible to provide service to the administrator or the Manager.
+-->Throughput
+	The number of transactions is directly dependent on the number of users, the users may be the manager,employees of the Library and also the people who use the Library for checking-out books, returning books and checking online library account.
+-->Capacity
+	The system is capable of handling 250 users at a time.
+-->Resource Utilization
+	The resources are modified according the user requirements and also according to the books requested by the users.
+    
+SUPPORTABILITY
+
+The system designers shall take in to considerations the following supportability and technical limitations. 
+-->Internet Protocols 
+    The system shall be comply with the TCP/IP protocol standards and shall be designed accordingly. 
+-->Information Security Requirement 
+    The  system  shall  support  the information  security  requirements  of customers and staff and  use  the
+    same  standard  as the legal information security requirements. 
+-->Billing System Data Compatibility 
+    The member balance amount that will be calculated and sent to the billing system shall be compatible with the
+    data types and design constraints of the billing system.
+-->Maintenance 
+    The maintenance of the system shall be done as per the maintenance contract.
+-->Standards 
+    The coding standards and naming conventions will be as per the Indian standards. 
+
+DESIGN CONSTRAINTS
+-->Software Language Used 
+-->Development Tools 
+-->Class Libraries 
+
+ON-LINE USER DOCUMENTATION AND HELP SYSTEM REQUIREMENTS 
+Online  help  is  provided  for  each  of  the  feature  available  with  the  system.
+All  the applications  provide  an  on-line  help  system  to  assist  the  user.  The  nature  of  these  systems  
+is  unique to application  development  as  they  combine  aspects  of programming  (hyperlinks,  etc)  with  aspects
+of technical writing (organization, presentation). Online help is provided for each and every feature provided by the system.
+The  User  Manual  describes the  use  of  the  system to staff  and  customers.  It  describes  the use of  the system 
+on mobile systems. The user manual should be available as a hard copy and also as online help. An  installation  document  
+will  be  provided  that  includes  the  installation  instructions  and  configuration guidelines,  which  is  important  
+to  a  full  solution  offering.  Also,  a  Read  Me  file  is  typically  included  as  a standard component. The Read Me 
+includes a “What’s New With This Release” section, and a discussion of compatibility issues with earlier releases. Most users 
+also appreciate documentation defining any known bugs and workarounds in the Read Me file.  Since  the  installation  of  
+system  is a  complex  process,  our  experts  will  do  it.  So  an installation Guide will not be provided to the user. 
+
+PURCHASED COMPONENTS
+
+INTERFACES
+
+LICENSING REQUIREMENTS
+The  usage  is  restricted  to  only  Yoyo group of hotels(c)  who  is  purchasing  the  Online hotel room reservation System 
+from Shshsh and signs the maintenance contract. 
+
+LEGAL, COPYRIGHT AND OTHER NOTICES 
+Online hotel room reservation  System is a trademark of Shshsh and cannot be used without its consent. 
+
+APPLICABLE STANDARDS 
+The  ISO/IEC  6592  guidelines  for  the  documentation  of  computer  based  application  systems  will  be followed. 
+
+SUPPORTING INFORMATION
+The  use-case  storyboards  or  the  user-interface  prototypes  are  not  available.  The  appendices  are  not  to  be 
+considered as part of the requirements.
