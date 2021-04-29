@@ -1,8 +1,8 @@
 # Yoyo
 
-## Tasks left
-- [ ] Make booking page
-- [ ] Update profile page
-- [ ] Modify booking page
-- [ ] RequireJS setup
-- [ ] Testing insertion/updation/deletion into MongoDB collection with input from html page
+## Branch details
+
+- main : Initial idea and code of the product.
+- diagrams : Contains all the diagrams made as part of the designing phase.
+- baby2 : Penultimate working model of the product, with some features incomplete
+- final : Final working model of the product.
