@@ -1,0 +1,27 @@
+.home{
+  background: #caf7e3;
+  height: 94vh;
+}
+
+.line {
+    height: 3px;
+    width: 20vw;
+}
+
+.cen_line{
+  height: 3px;
+  width: 20vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.features{
+  color:#56776c;
+}
+
+.footer{
+  background: #56776c;
+  height: 60px;
+  padding-top: 5px;
+}

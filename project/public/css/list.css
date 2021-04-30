@@ -1,0 +1,22 @@
+.home{
+    background: #f2b4b4;
+  
+  }
+  
+  .front_img{
+    height: 300px;
+    width: 300px;
+  }
+  .line {
+      height: 2px;
+      width: 90vw;
+  }
+   .link{
+     text-decoration: none;
+     transition: 0.25s;
+     color:black;
+   }
+  
+   .link:hover{
+     color: var(--bs-primary);
+   }

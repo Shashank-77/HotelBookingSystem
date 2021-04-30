@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/signup.css">
+    <title>Create Account</title>
+</head>
+
+<body>
+    <section class="home">
+        <div class="container-fluid">
+            <div class="row">
+                <h1 class="display-1 text-center features">Sign Up</h1>
+                <div class="cen_line" style="background:#56776c;">
+
+                </div>
+            </div>
+            <div class="row justify-content-evenly mt-5">
+                <div class="col-4">
+                    <form action="/" method="POST" class="row needs-validation me-5" novalidate>
+                        <div class="col-6">
+                            <label for="v1">First Name</label>
+                            <input type="text" name="Firstname" class="form-control" id="v1" placeholder='John'
+                                required>
+                            <div class="valid-feedback">
+                                Looks great!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please type your first name again !
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="v2">Last Name</label>
+                            <input type="text" name="Lastname" class="form-control" id="v2" placeholder='Doe' required>
+                            <div class="valid-feedback">
+                                Looks great!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please type your last name again !
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="v1">Email</label>
+                            <input type="email" name="email" class="form-control" id="v1"
+                                placeholder='JohnDoe@email.com' required>
+                            <div class="valid-feedback">
+                                Looks great!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please type your Email address again !
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="v2">Phone Number</label>
+                            <input type="tel" name="number" class="form-control" id="v2" placeholder='+1 2345678910'
+                                required>
+                            <div class="valid-feedback">
+                                Looks great!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please type your phone number again !
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="v2">Username</label>
+                            <input type="text" name="username" class="form-control" id="v2" placeholder='Username'
+                                required>
+                            <div class="valid-feedback">
+                                Looks great!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please type your username again !
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <label for="v2">Password</label>
+                            <input type="password" name="password" class="form-control" id="v2" placeholder='Password'
+                                required>
+                            <div class="valid-feedback">
+                                Looks great!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please type your last name again !
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="v2">State</label>
+                            <input type="text" name="state" class="form-control" id="v2" placeholder='State' required>
+                            <div class="valid-feedback">
+                                Looks great!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please type your state again !
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="v2">Country</label>
+                            <input type="text" name="country" class="form-control" id="v2" placeholder='Country'
+                                required>
+                            <div class="valid-feedback">
+                                Looks great!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please type your Country again !
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row justify-content-center">
+                                <div class="col-4 self-align-center mt-5">
+                                    <label for="v2">Role</label>
+                                    <select name="role" id="role" class="custom-select custom-select-lg mb-3"
+                                        onchange="Toggle()">
+                                        <option selected>Choose Role</option>
+                                        <option value="1">Tourist</option>
+                                        <option value="2">Manager</option>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks great!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please select your Role again !
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="toggle">
+                            <div class="col-12">
+                                <label for="card_no">Card Number</label>
+                                <input type="text" id="card_no" name="" value="" placeholder="XXXX-XXXX-XXXX-XXXX"
+                                    class="form-control">
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-6">
+                                    <label for="cvv">CVV</label>
+                                    <input type="password" id="cvv" name="" value="" placeholder="CVV" class="form-control">
+                                </div>
+                                <div class="col-6">
+                                    <label for="exp_date">Expiry Date</label>
+                                    <input type="month" name="" value="" placeholder="MM/YYYY" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-success w-100 mt-5" value="Submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-5">
+                    <h1 class="display-3 features">Why use Yoyo?</h1>
+                    <div class="line mb-3" style="background:#56776c;"></div>
+                    <div class="row pt-2">
+                        <div class="col-1 mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#56776c"
+                                class="bi bi-envelope-open-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.313l6.709 3.933L8 8.928l1.291.717L16 5.715V5.4a2 2 0 0 0-1.059-1.765l-6-3.2zM16 6.873l-5.693 3.337L16 13.372v-6.5zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516zM0 13.373l5.693-3.163L0 6.873v6.5z" />
+                            </svg>
+                        </div>
+                        <div class="col">
+                            <p class="display-6 features">Regular updates regarding offers and openings in your area</p>
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-1 mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#56776c"
+                                class="bi bi-award-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z" />
+                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z" />
+                            </svg>
+                        </div>
+                        <div class="col">
+                            <p class="display-6 features">Reputable Catalog of Hotels with the Highest Standards</p>
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-1 mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#56776c"
+                                class="bi bi-credit-card-2-front-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2zm0 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z" />
+                            </svg>
+                        </div>
+                        <div class="col">
+                            <p class="display-6 features">Reputable Catalog of Hotels with the Highest Standards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <h1 class="display-6 text-center" style="color:#caf7e3;">©2021 Yoyo Group of Hotels. All Rights Reserved</h1>
+    </footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script>
+        var role = document.getElementById("role");
+        var toggle = document.getElementById("toggle");
+        toggle.style.visibility = "hidden";
+        function Toggle() {
+            if (role.value === "1") {
+                toggle.style.visibility = "visible";
+            }
+            else {
+                toggle.style.visibility = "hidden";
+            }
+
+        }
+
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

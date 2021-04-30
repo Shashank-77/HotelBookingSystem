@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/room_book_style.css">
+
+    {{!--
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> --}}
+
+    <title>Book a room</title>
+</head>
+
+<body>
+    <nav class="navbar w-100 navbar-expand-lg fixed-top navbar-dark navbar-float">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <div class="row">
+                    <div class="col">
+                        <img src="Images/yoyo.jpg" class="img-fluid rounded" width="57" height="52" alt="">
+                    </div>
+                    <div class="col">
+                        <h6 class="title display-6">Yoyo</h6>
+                    </div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link me-4 active" aria-current="page" href="/booking">
+                            Back</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <section class="home bg-danger pt-5 mb-5 pb-5 mt-5">
+        <div class="container-fluid pt-5 ">
+            <div class="row mt-5">
+                <div class="col-6 text-center">
+                    <img src="Images/somerset-front.jpg" class="front_img rounded img-fluid mt-5">
+                </div>
+                <div class="col-6">
+                    <h2 class="display-2">{{content.name}}</h2>
+                    <div class="line bg-dark"></div>
+                    <div class="row">
+                        <h6 class="display-6 pt-4 mb-3 text-dark">{{content.description}}</h6>
+                        <div class="row mt-5 mb-3">
+                            <div class="col-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor"
+                                    class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+                                </svg>
+
+                            </div>
+                            <div class="col">
+                                {{!-- <h6 class="display-6">No 94, Sathyadev Ave, MRC Nagar, Raja Annamalai Puram,
+                                    Chennai,
+                                    Tamil Nadu 600028</h6> --}}
+                                <h6 class="display-6">{{content.Address}}</h6>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="room_types">
+        <!-- ADD SUBMIT FUNCTIONALITY -->
+        <div class="container-fluid">
+            <div class="row text-center justify-content-center">
+                <div class="col text-center">
+                    <h2 class="display-2 text-dark">Room Types</h2>
+                    <div class="cen_line bg-dark"></div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3 bg-light rounded shadow me-3 mt-5 text-center">
+                    <h1 class="display-5 text-center">Economy</h1>
+                    <div class="cen_line bg-dark mb-2"></div>
+                    <ul class="list-unstyled">
+                        <li>
+                            <p class="lead">{{content.Rooms.0.Feature.[0]}}</p>
+                        </li>
+                        <li>
+                            <p class="lead">{{content.Rooms.0.Feature.[1]}}</p>
+                        </li>
+                        <li>
+                            <p class="lead">{{content.Rooms.0.Feature.[2]}}</p>
+                        </li>
+                        <div class="cen_line bg-dark mb-2" style="width: 10vw"></div>
+
+                        <button class="btn price_btn eco_price_btn" type="button" data-bs-toggle="modal"
+                            data-bs-target="#economyModal">
+                            <h1 class="display-5">₹{{content.Rooms.0.base}}</h1>
+                        </button>
+                        <div class="modal fade" id="economyModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Availability</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="/payment" method="POST" class="row">
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <p class="lead mt-3 mb-1 ms-1 text-center">From</p>
+                                                </div>
+                                                <div class="col-4 pt-2">
+                                                    <input type="date" name="from" class="from text-center pt-2 pb-2"
+                                                        placeholder="Enter Date">
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center mt-3">
+                                                <div class="col-2">
+                                                    <p class="lead mt-3 mb-1 ms-1 text-center">Till</p>
+                                                </div>
+                                                <div class="col-4 pt-2">
+                                                    <input type="date" name="till" class="from text-center pt-2 pb-2"
+                                                        placeholder="Enter Date">
+                                                </div>
+                                            </div>
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-4">
+                                                    <input type="text" name="Class" class="from text-center pt-2 pb-2"
+                                                        value="Economy" style="visibility:hidden">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-success w-100 mt-5"
+                                                    value="Submit">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-3 bg-info rounded shadow me-3 mt-5 text-center">
+                    <h1 class="display-5 text-center">Family</h1>
+                    <div class="cen_line bg-dark mb-2"></div>
+                    <ul class="list-unstyled">
+                        <li>
+                            <p class="lead">{{content.Rooms.1.Feature.[0]}}</p>
+                        </li>
+                        <li>
+                            <p class="lead">{{content.Rooms.1.Feature.[1]}}</p>
+                        </li>
+                        <li>
+                            <p class="lead">{{content.Rooms.1.Feature.[2]}}</p>
+                        </li>
+                        <div class="cen_line bg-dark mb-2" style="width: 10vw"></div>
+
+                        <button class="btn price_btn eco_price_btn" type="button" data-bs-toggle="modal"
+                            data-bs-target="#FamilyModal">
+                            <h1 class="display-5">₹{{content.Rooms.1.base}}</h1>
+                        </button>
+                        <div class="modal fade" id="FamilyModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Availability</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="/payment" method="POST" class="row">
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <p class="lead mt-3 mb-1 ms-1 text-center">From</p>
+                                                </div>
+                                                <div class="col-4 pt-2">
+                                                    <input type="date" name="from" class="from text-center pt-2 pb-2"
+                                                        placeholder="Enter Date">
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center mt-3">
+                                                <div class="col-2">
+                                                    <p class="lead mt-3 mb-1 ms-1 text-center">Till</p>
+                                                </div>
+                                                <div class="col-4 pt-2">
+                                                    <input type="date" name="till" class="from text-center pt-2 pb-2"
+                                                        placeholder="Enter Date">
+                                                </div>
+                                            </div>
+
+                                            <div class="row justify-content-center">
+
+                                                <div class="col-4">
+                                                    <input name="Class" type="text" class="from text-center pt-2 pb-2"
+                                                        value="Family" style="visibility:hidden">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-success w-100 mt-5"
+                                                    value="Submit">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </ul>
+                </div>
+                <div class="col-3 bg-primary rounded shadow mt-5 text-center">
+                    <h1 class="display-5 text-center">Suite</h1>
+                    <div class="cen_line bg-dark mb-2"></div>
+                    <ul class="list-unstyled">
+                        <li>
+                            <p class="lead">{{content.Rooms.2.Feature.[0]}}</p>
+                        </li>
+                        <li>
+                            <p class="lead">{{content.Rooms.2.Feature.[1]}}</p>
+                        </li>
+                        <li>
+                            <p class="lead">{{content.Rooms.2.Feature.[2]}}</p>
+                        </li>
+                        <div class="cen_line bg-dark mb-2" style="width: 10vw"></div>
+
+                        <button class="btn price_btn eco_price_btn" type="button" data-bs-toggle="modal"
+                            data-bs-target="#SuiteModal">
+                            <h1 class="display-5">₹{{content.Rooms.2.base}}</h1>
+                        </button>
+                        <div class="modal fade" id="SuiteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Availability</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="/payment" method="POST" class="row">
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <p class="lead mt-3 mb-1 ms-1 text-center">From</p>
+                                                </div>
+                                                <div class="col-4 pt-2">
+                                                    <input type="date" name="from" class="from text-center pt-2 pb-2"
+                                                        placeholder="Enter Date">
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center mt-3">
+                                                <div class="col-2">
+                                                    <p class="lead mt-3 mb-1 ms-1 text-center">Till</p>
+                                                </div>
+                                                <div class="col-4 pt-2">
+                                                    <input type="date" name="till" class="from text-center pt-2 pb-2"
+                                                        placeholder="Enter Date">
+                                                </div>
+                                            </div>
+
+                                            <div class="row justify-content-center">
+
+                                                <div class="col-4">
+                                                    <input name="Class" type="text" class="from text-center pt-2 pb-2"
+                                                        value="Suite" style="visibility:hidden">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-success w-100 mt-5"
+                                                    value="Submit">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="images">
+        <div class="container-fluid">
+            <div class="row text-center justify-content-center">
+                <div class="col text-center">
+                    <h2 class="display-2 text-info">Gallery</h2>
+                    <div class="cen_line bg-info"></div>
+                </div>
+            </div>
+            <div class="row text-center justify-content-center">
+                <div class="col">
+                    <img src="{{content.images.[1]}}" class="img-fluid gallery_img shadow rounded mt-5 ">
+                </div>
+                <div class="col">
+                    <img src="{{content.images.[2]}}" class="img-fluid gallery_img shadow rounded mt-5 ">
+                </div>
+                <div class="col">
+                    <img src="{{content.images.[3]}}" class="img-fluid gallery_img shadow rounded mt-5 ">
+                </div>
+                <div class="col">
+                    <img src="{{content.images.[4]}}" class="img-fluid gallery_img shadow rounded mt-5">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class='guarantees'>
+        <div class="container-fluid ps-4 pe-4">
+            <div class="row text-center justify-content-center">
+                <div class="col text-center">
+                    <h2 class="display-2 text-dark">Guarantees</h2>
+                    <div class="cen_line bg-dark"></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-5">
+                <div class="col-5 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#f7d9d9" class="bi bi-wifi"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.444 12.444 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z" />
+                        <path
+                            d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.455 9.455 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.478 5.478 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091l.016-.015zM9.06 12.44c.196-.196.198-.52-.04-.66A1.99 1.99 0 0 0 8 11.5a1.99 1.99 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z" />
+                    </svg>
+                    <h1 class="display-4">Connected</h1>
+                    {{!-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Consectetur libero id faucibus nisl.</p> --}}
+                    <p class="lead">{{content.Guarantees.[0]}}</p>
+                </div>
+                <div class="col-5 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#f7d9d9"
+                        class="bi bi-lock-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                    </svg>
+                    <h1 class="display-4">Secure</h1>
+                    {{!-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Consectetur libero id faucibus nisl.</p> --}}
+                    <p class="lead">{{content.Guarantees.[1]}}</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-5 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#f7d9d9"
+                        class="bi bi-bucket-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2.522 5H2a.5.5 0 0 0-.494.574l1.372 9.149A1.5 1.5 0 0 0 4.36 16h7.278a1.5 1.5 0 0 0 1.483-1.277l1.373-9.149A.5.5 0 0 0 14 5h-.522A5.5 5.5 0 0 0 2.522 5zm1.005 0a4.5 4.5 0 0 1 8.945 0H3.527z" />
+                    </svg>
+                    <h1 class="display-4">Clean</h1>
+                    {{!-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Consectetur libero id faucibus nisl.</p> --}}
+                    <p class="lead">{{content.Guarantees.[2]}}</p>
+                </div>
+                <div class="col-5 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#f7d9d9" class="bi bi-joystick"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z" />
+                        <path
+                            d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z" />
+                    </svg>
+                    <h1 class="display-4">Fun</h1>
+                    {{!-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Consectetur libero id faucibus nisl.</p> --}}
+                    <p class="lead">{{content.Guarantees.[3]}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="row">
+                    <h1 class="display-4 text-center text-muted">Contact Us</h1>
+                    <div class="cen_line" style="background:var(--bs-secondary);"></div>
+                </div>
+                <div class="row mt-4 justify-content-center">
+                    <div class="col-4 text-center">
+                        <p class="display-6 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                fill="var(--bs-secondary)" class="bi bi-at me-2" viewBox="0 0 16 16">
+                                <path
+                                    d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z" />
+                            </svg>Email Us</p>
+                        <a href="mailto:{{content.Contacts.[0]}}" class="lead text-muted" style="text-decoration:none;">
+                            <p class="lead" id="email">{{content.Contacts.[0]}}</p>
+                        </a>
+                    </div>
+                    <div class="col-4 text-center">
+                        <p class="display-6 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                fill="var(--bs-secondary)" class="bi bi-telephone-fill me-2" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                            </svg>Call Us</p>
+                        <p class="lead text-muted">{{content.Contacts.[1]}}</p>
+                    </div>
+                    <div class="col-4 text-center">
+                        <p class="display-6 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                fill="var(--bs-secondary)" class="bi bi-instagram me-2" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                            </svg>Instagram</p>
+                        <p class="lead text-muted">{{content.Contacts.[2]}}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row pt-4 pb-4" style="background: #f7d9d9">
+                <div class="col text-center text-muted">
+                    <h1 class="display-6">©2021 Yoyo Group of Hotels. All Rights Reserved</h1>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        var disableDates = ["9-11-2021", "14-11-2021", "15-11-2021", "27-12-2021"];
+
+        $('.datepicker').datepicker({
+            format: 'mm/dd/yyyy',
+            beforeShowDay: function (date) {
+                dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+                if (disableDates.indexOf(dmy) != -1) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        });
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

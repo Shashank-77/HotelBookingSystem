@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/list.css">
+    <title>List of Hotels</title>
+</head>
+
+<body>
+    <nav class="navbar w-100 navbar-expand-lg fixed-top navbar-float" style="background:#b7657b;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <div class="row">
+                    <div class="col">
+                        <img src="Images/yoyo.jpg" class="img-fluid rounded" width="57" height="52" alt="">
+                    </div>
+                    <div class="col">
+                        <h6 class="title display-6 text-white">Yoyo</h6>
+                    </div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link me-4 active text-white" aria-current="page" href="/first">
+                            Home Page</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="home">
+        <div class="container-fluid">
+            {{#each content}}
+            <div class="row pt-5 ps-5">
+                <div class="col-4 pt-5 ps-5">
+                    {{!-- <img src="Images/somerset-front.jpg" class="front_img rounded img-fluid mt-4 ms-5"> --}}
+                    <img src="{{this.images.[0]}} " class="front_img rounded img-fluid mt-4 ms-5">
+                </div>
+                <div class="col-5 pt-5">
+                    <a href="/room_book?id={{this.name1}}" class="link display-3 pt-4 ">{{this.name}}</a>
+                    <h1 class="display-6 mt-3 mb-3" style="color: var(--bs-gray-dark);">{{this.Address}}</h1>
+                    <p class="lead" style="color: var(--bs-gray-dark);">Starts at ₹{{this.Rooms.0.base}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col ms-2 mt-5">
+                    <div class="line bg-dark" style="margin: auto;">
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    <footer class=" pt-2 pb-1" style="background:#8f4f4f;">
+        <div class="container-fluid">
+            <h1 class="display-6 text-center">©2021 Yoyo Group of Hotels. All Rights Reserved</h1>
+        </div>
+    </footer>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

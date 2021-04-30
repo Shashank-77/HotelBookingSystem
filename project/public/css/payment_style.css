@@ -1,0 +1,75 @@
+.home {
+    background: #caf7e3;
+    height: 100vh;
+  }
+  
+  .full-height{
+    height: 100%;
+  }
+  .features{
+    color:#56776c;
+  }
+  
+  .headline {
+      height: 3px;
+      background-color:#56776c;
+  }
+  
+  .coverline {
+      height: 3px;
+      background-color: var(--bs-secondary);
+  }
+  
+  .container{
+    width: auto;
+    height: auto;
+    border: 2px solid #56776c;
+    border-radius: 15px;
+  }
+  
+  .icon-container {
+      margin-bottom: 20px;
+      padding: 7px 0;
+      font-size: 24px;
+  }
+  
+  .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      width: 100%;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 17px;
+  }
+  
+  .btn:hover {
+      background-color: #45a049;
+  }
+  
+  a {
+      color: #2196F3;
+  }
+  
+  hr {
+      border: 1px solid lightgrey;
+  }
+  
+  span.price {
+      float: right;
+      color: grey;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+  @media (max-width: 800px) {
+      .row {
+          flex-direction: column-reverse;
+      }
+  
+      .col-25 {
+          margin-bottom: 20px;
+      }
+  }
+  

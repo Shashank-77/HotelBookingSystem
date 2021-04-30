@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/payment_style.css">
+    <title>Payment</title>
+</head>
+
+<body>
+    <section class="home">
+        <div class="row">
+            <div class="col">
+                <div class="row justify-content-center mt-3 mb-3">
+                    <div class="col-4">
+                        <h1 class="display-1 text-center features">Payment Preview</h1>
+                        <div class="headline text-center features"></div>
+                    </div>
+                </div>
+                <div class="row mt-4 justify-content-evenly">
+                    <div class="col-auto" id="member">
+                        <h1 class="display-4 features text-center">Member Details</h1>
+                        <div class="headline text-center features ms-5 me-5 ps-5 pe-5 mb-4"></div>
+                        <div class="row gx-5">
+                            <div class="col-1 mt-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#56776c"
+                                    class="bi bi-person-fill mb-3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#56776c"
+                                    class="bi bi-envelope-fill mb-3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    style="fill:#56776c;transform:;-ms-filter:">
+                                    <path
+                                        d="M20,4H4C2.897,4,2,4.897,2,6v12c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2V6C22,4.897,21.103,4,20,4z M8.715,8 c1.151,0,2,0.849,2,2s-0.849,2-2,2s-2-0.849-2-2S7.563,8,8.715,8z M12.43,16H5v-0.465c0-1.373,1.676-2.785,3.715-2.785 s3.715,1.412,3.715,2.785V16z M19,15h-4v-2h4V15z M19,11h-5V9h5V11z">
+                                    </path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#56776c"
+                                    class="bi bi-geo-alt-fill mt-3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#56776c"
+                                    class="bi bi-telephone-fill mt-3" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                </svg>
+                            </div>
+                            <div class="col-10 mt-1 ms-2">
+                                <h1 class="display-6 features">Name <span class="lead features">{{u.Firstname}}
+                                        {{u.Lastname}}</span></h1>
+                                <h1 class="display-6 features">Email <span class="lead features">{{u.email}}</span></h1>
+                                <h1 class="display-6 features">State <span class="lead features">{{u.state}}</span></h1>
+                                <h1 class="display-6 features">Country <span class="lead features">{{u.country}}</span>
+                                </h1>
+                                <h1 class="display-6 features">Number <span class="lead features">{{u.number}}</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto pt-5 mt-2">
+                        <div class="container pt-5 ps-5 pe-5 pb-5">
+                            <h1 class="display-4 features ms-5 me-5">Room Details</h1>
+                            <div class="headline text-center features ms-5 me-5 mb-4"></div>
+                            <h1 class="display-6 features">Room Type <span class="lead features">{{type}}</span></h1>
+                            <h1 class="display-6 features">Number of nights <span
+                                    class="lead features">{{nights}}</span></h1>
+                            <h1 class="display-6 features">Total <span class="lead features">{{cost}}</span></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4 justify-content-center">
+                    <div class="col-3 mt-5">
+                        <form action="/first" method="GET">
+                            <input type="submit" name="button" class="btn btn-success" value="Done">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

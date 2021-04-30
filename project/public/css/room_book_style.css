@@ -1,0 +1,79 @@
+.home{
+  height: 80vh;
+}
+
+.front_img{
+  height: 300px;
+  width: 300px;
+}
+
+.line {
+    height: 3px;
+    width: 20vw;
+}
+.gallery_img{
+  height:220px;
+  width:300px;
+}
+.from{
+  background: none;
+  border-radius: 13px;
+  border: 2px solid black
+}
+input{
+  border-color: black;
+}
+input:onfocus{
+  border-color: white;
+}
+.room_types{
+  height: 60vh;
+  background: #f9f3f3;
+}
+
+.images{
+  height: 50vh;
+  background: #f7d9d9;
+}
+
+.guarantees{
+  background:#f25287;
+  height: 60vh;
+}
+.cen_line{
+  height: 3px;
+  width: 20vw;
+  position: relative;
+left: 50%;
+transform: translateX(-50%);
+}
+
+.price_btn{
+  border-radius: 16px;
+}
+.eco_price_btn{
+  border: 2px solid black
+}
+.eco_price_btn:hover{
+  cursor: pointer;
+  background: var(--bs-success);
+  border: 2px solid var(--bs-success);
+  color: white;
+}
+
+.footer{
+  background: #f9f3f3;
+  height: auto;
+}
+
+.navbar-float {
+
+background-color: var(--bs-dark);
+}
+.nav-item {
+    font-size: 20px;
+}
+
+#email:hover{
+  color: var(--bs-info);
+}

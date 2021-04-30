@@ -1,0 +1,32 @@
+{{!-- {{> header}} --}}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/login_style.css" />
+</head>
+
+<body>
+    <form class="box" id="login" action="/first" method="POST">
+        <img src="Images/logo.jpeg" class="logo" alt="Yoyo logo">
+
+
+        <input type="text" name="username" id="username" placeholder="Enter Username" required>
+        <input type="password" name="password" id="password" placeholder="Enter Password" required>
+        <br>
+        <input type="submit" name="login" value="Login">
+    </form>
+    <div class="box1">
+        <h3 style="font-family:menlo;">Dont Have An Account Yet?<br>Sign Up below.</h3>
+        <form action="/signup" method="GET">
+            <input type="submit" name="signup" value="Sign Up" />
+        </form>
+    </div>
+    {{!--
+    <script src="login_script.js"></script> --}}
+</body>
+
+</html>
