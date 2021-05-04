@@ -1,8 +1,8 @@
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb://localhost:27017/task-manager");
-// mongoose.connect("mongodb+srv://yoyo:miniproject@cluster0.d3vbd.mongodb.net/task-manager");
+//mongoose.connect("mongodb://localhost:27017/task-manager");
+mongoose.connect("mongodb+srv://shiva:shivaPassword@cluster0.qm2oy.mongodb.net/task-manager?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
 
 
 // CONNECTION EVENTS
