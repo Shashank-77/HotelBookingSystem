@@ -1,5 +1,5 @@
 # Yoyo
-
+A web application for hotel owners and tourists to post and peruse a dynamic directory of hotels.
 
 ## Quick Start
 
