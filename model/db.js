@@ -1,8 +1,9 @@
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
+const MONGO_URL = require("./env.js");
 
 //mongoose.connect("mongodb://localhost:27017/task-manager");
-mongoose.connect("mongodb+srv://shiva:shivaPassword@cluster0.qm2oy.mongodb.net/task-manager?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 
 
 // CONNECTION EVENTS
